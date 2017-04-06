@@ -1,0 +1,11 @@
+# docker-compose.yml
+version: '2'
+services:
+    ffserver:
+        build: docker/
+        volumes:
+            - .:/data
+        working_dir: /data
+        ports:
+            - "8090:8090"
+        command: ffserver -f /data/ffserver.conf
